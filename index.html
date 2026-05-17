@@ -1,294 +1,451 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Akash Kumar — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0a0a0f;--surface:#13131a;--surface2:#1c1c26;
-  --accent:#c8ff00;--accent2:#ff6b35;--accent3:#a78bfa;--accent4:#38bdf8;
-  --text:#f5f5f0;--muted:#888;
-  --border:rgba(255,255,255,0.08);
+  --bg:#080810;
+  --s1:#0f0f1a;
+  --s2:#16162a;
+  --s3:#1e1e35;
+  --lime:#c8ff00;
+  --purple:#a78bfa;
+  --orange:#ff6b35;
+  --blue:#38bdf8;
+  --pink:#f472b6;
+  --green:#34d399;
+  --text:#f0f0f8;
+  --muted:#7070a0;
+  --border:rgba(255,255,255,0.07);
 }
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
 
-/* Colourful blobs */
-.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:0.12;pointer-events:none;z-index:0}
-.blob1{width:500px;height:500px;background:#c8ff00;top:-150px;left:-150px}
-.blob2{width:400px;height:400px;background:#a78bfa;top:40%;right:-100px}
-.blob3{width:350px;height:350px;background:#ff6b35;bottom:-100px;left:30%}
-.blob4{width:300px;height:300px;background:#38bdf8;top:60%;left:10%}
+/* bg orbs */
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;mix-blend-mode:screen}
+.o1{width:700px;height:700px;background:radial-gradient(circle,rgba(200,255,0,0.06) 0%,transparent 70%);top:-200px;left:-200px}
+.o2{width:600px;height:600px;background:radial-gradient(circle,rgba(167,139,250,0.07) 0%,transparent 70%);top:30%;right:-200px}
+.o3{width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,53,0.05) 0%,transparent 70%);bottom:0;left:20%}
+.o4{width:400px;height:400px;background:radial-gradient(circle,rgba(56,189,248,0.05) 0%,transparent 70%);top:70%;left:5%}
 
-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,10,15,0.85);backdrop-filter:blur(14px);z-index:100}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:-0.03em}
-.logo span{color:var(--accent)}
-nav ul{display:flex;gap:2rem;list-style:none}
-nav ul a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
-nav ul a:hover{color:var(--text)}
-.nav-cta{background:var(--accent);color:#000;padding:0.5rem 1.2rem;border-radius:50px;font-size:0.85rem;font-weight:500;text-decoration:none;transition:transform 0.2s,opacity 0.2s}
-.nav-cta:hover{opacity:0.85;transform:scale(0.98)}
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;z:100;background:rgba(8,8,16,0.8);backdrop-filter:blur(20px);z-index:200}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.04em;color:var(--text)}
+.logo em{color:var(--lime);font-style:normal}
+.nav-links{display:flex;gap:0.25rem}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;padding:0.4rem 0.9rem;border-radius:50px;transition:all 0.2s}
+.nav-links a:hover{color:var(--text);background:var(--s2)}
+.hire-btn{background:var(--lime);color:#000;font-weight:600;font-size:0.82rem;padding:0.5rem 1.3rem;border-radius:50px;text-decoration:none;letter-spacing:-0.01em;transition:transform 0.2s,opacity 0.2s}
+.hire-btn:hover{opacity:0.88;transform:scale(0.97)}
 
-.hero{padding:5rem 2rem 4rem;max-width:1100px;margin:0 auto;position:relative;z-index:1}
-.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,255,0,0.07);border:1px solid rgba(200,255,0,0.2);border-radius:50px;padding:0.4rem 1rem;font-size:0.78rem;color:var(--accent);margin-bottom:2rem}
-.hero-tag .dot{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:800;line-height:1.05;letter-spacing:-0.04em;margin-bottom:1.5rem}
-.g-lime{background:linear-gradient(90deg,#c8ff00,#a3e635);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.g-purple{background:linear-gradient(90deg,#a78bfa,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.g-orange{background:linear-gradient(90deg,#ff6b35,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.strike{text-decoration:line-through;color:var(--muted);font-weight:400;-webkit-text-fill-color:var(--muted)}
-.hero-sub{font-size:1.1rem;color:var(--muted);max-width:500px;line-height:1.7;margin-bottom:2.5rem}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-main{background:var(--accent);color:#000;padding:0.9rem 2rem;border-radius:50px;font-weight:500;text-decoration:none;font-size:0.95rem;transition:transform 0.2s}
-.btn-main:hover{transform:scale(0.97)}
-.btn-ghost{border:1px solid var(--border);color:var(--text);padding:0.9rem 2rem;border-radius:50px;font-weight:500;text-decoration:none;font-size:0.95rem;transition:background 0.2s}
-.btn-ghost:hover{background:var(--surface2)}
+/* HERO */
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:4rem 2.5rem 3rem;max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.avail-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1rem;border-radius:50px;border:1px solid rgba(200,255,0,0.25);background:rgba(200,255,0,0.06);font-size:0.75rem;color:var(--lime);font-weight:500;letter-spacing:0.02em;margin-bottom:2.5rem;width:fit-content}
+.avail-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(200,255,0,0.4)}50%{opacity:0.5;box-shadow:0 0 0 4px rgba(200,255,0,0)}}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:800;line-height:0.95;letter-spacing:-0.05em;margin-bottom:2rem}
+.line1{color:var(--muted);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:400;font-family:'DM Sans',sans-serif;display:block;margin-bottom:0.5rem}
+.name-grad{background:linear-gradient(135deg,#c8ff00 0%,#86efac 50%,#38bdf8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.title-line{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.title-text{color:var(--text)}
+.strike-text{text-decoration:line-through;color:var(--s3);-webkit-text-fill-color:var(--s3);text-decoration-color:var(--purple)}
+.hero-desc{font-size:1.05rem;color:var(--muted);max-width:520px;line-height:1.75;margin-bottom:2.5rem}
+.hero-desc strong{color:var(--text);font-weight:500}
+.hero-ctas{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-primary{background:var(--lime);color:#000;font-weight:600;font-size:0.9rem;padding:0.85rem 2rem;border-radius:50px;text-decoration:none;transition:transform 0.2s}
+.btn-primary:hover{transform:scale(0.97)}
+.btn-sec{border:1px solid var(--border);color:var(--text);font-size:0.9rem;font-weight:500;padding:0.85rem 2rem;border-radius:50px;text-decoration:none;transition:all 0.2s}
+.btn-sec:hover{background:var(--s2);border-color:rgba(255,255,255,0.15)}
+.score-row{display:flex;gap:2rem;flex-wrap:wrap}
+.score-item{display:flex;flex-direction:column;gap:0.2rem}
+.score-num{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800}
+.score-label{font-size:0.74rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
+.sn1{color:var(--lime)}.sn2{color:var(--purple)}.sn3{color:var(--blue)}
 
-.badge-row{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2rem}
-.badge{padding:0.35rem 0.9rem;border-radius:50px;font-size:0.78rem;font-weight:500;border:1px solid}
-.b-c{background:rgba(56,189,248,0.08);color:#38bdf8;border-color:rgba(56,189,248,0.25)}
-.b-cpp{background:rgba(167,139,250,0.08);color:#a78bfa;border-color:rgba(167,139,250,0.25)}
-.b-ai{background:rgba(255,107,53,0.08);color:#ff6b35;border-color:rgba(255,107,53,0.25)}
-.b-fresh{background:rgba(200,255,0,0.08);color:var(--accent);border-color:rgba(200,255,0,0.25)}
+/* MARQUEE */
+.marq-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0.9rem 0;position:relative;z-index:1;margin:0}
+.marq-track{display:flex;gap:2rem;animation:marq 25s linear infinite;width:max-content}
+@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marq-item{display:flex;align-items:center;gap:2rem;white-space:nowrap;font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase}
+.mi1{color:var(--lime)}.mi2{color:var(--purple)}.mi3{color:var(--orange)}.mi4{color:var(--blue)}.mi5{color:var(--pink)}.sep{color:var(--border)}
 
-.marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1rem 0;overflow:hidden;white-space:nowrap;margin:2rem 0;position:relative;z-index:1}
-.marquee{display:inline-flex;gap:2.5rem;animation:scroll 22s linear infinite}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.marquee span{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
-.marquee .s1{color:#c8ff00}.marquee .s2{color:#a78bfa}.marquee .s3{color:#ff6b35}.marquee .s4{color:#38bdf8}
+/* SECTIONS */
+.sec{padding:5rem 2.5rem;max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.sec-tag{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem}
+.st-lime{color:var(--lime)}.st-purple{color:var(--purple)}.st-orange{color:var(--orange)}.st-blue{color:var(--blue)}.st-pink{color:var(--pink)}
+.sec-tag::before{content:'';width:16px;height:1px;background:currentColor}
+.sec h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:0.5rem;line-height:1.1}
+.sec-sub{color:var(--muted);font-size:0.9rem;margin-bottom:2.5rem}
 
-.section{padding:4rem 2rem;max-width:1100px;margin:0 auto;position:relative;z-index:1}
-.section-label{font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.5rem}
-.sl-lime{color:var(--accent)}.sl-purple{color:#a78bfa}.sl-orange{color:#ff6b35}.sl-blue{color:#38bdf8}
-.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:0.75rem}
+/* SKILLS */
+.skills-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-top:2rem}
+.skill-block{background:var(--bg);padding:1.8rem;transition:background 0.2s;cursor:default}
+.skill-block:hover{background:var(--s1)}
+.sk-emoji{font-size:1.6rem;margin-bottom:0.8rem}
+.sk-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.3rem}
+.sk-desc{font-size:0.78rem;color:var(--muted);line-height:1.5}
+.sk-level{display:flex;gap:3px;margin-top:0.75rem}
+.sk-dot{width:6px;height:6px;border-radius:50%}
+.sk-dot.on{background:currentColor;opacity:1}
+.sk-dot.off{background:var(--s3);opacity:1}
+.skc1{color:var(--blue)}.skc2{color:var(--purple)}.skc3{color:var(--orange)}.skc4{color:var(--lime)}.skc5{color:var(--pink)}.skc6{color:var(--green)}
 
-.works-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;margin-top:2rem}
-.work-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform 0.25s,border-color 0.25s}
-.work-card:hover{transform:translateY(-5px)}
-.work-card:nth-child(1):hover{border-color:rgba(200,255,0,0.3)}
-.work-card:nth-child(2):hover{border-color:rgba(167,139,250,0.3)}
-.work-card:nth-child(3):hover{border-color:rgba(56,189,248,0.3)}
-.work-thumb{height:175px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;position:relative;overflow:hidden}
-.g-t1{background:linear-gradient(135deg,#0d1117,#0a3d2e)}
-.g-t2{background:linear-gradient(135deg,#120a2a,#2a0a4a)}
-.g-t3{background:linear-gradient(135deg,#0a1a2a,#0a2a4a)}
-.work-label{position:absolute;bottom:0.75rem;left:0.75rem;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);border:1px solid var(--border);padding:0.28rem 0.7rem;border-radius:50px;font-size:0.7rem;color:var(--muted)}
-.work-info{padding:1.25rem}
-.work-info h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.35rem}
-.work-info p{font-size:0.83rem;color:var(--muted);line-height:1.5}
+/* EDUCATION / TIMELINE */
+.timeline{position:relative;margin-top:2rem;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--lime),var(--purple),var(--orange))}
+.tl-item{position:relative;padding:0 0 2.5rem 2rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-0.5rem;top:0.35rem;width:1rem;height:1rem;border-radius:50%;border:2px solid;background:var(--bg)}
+.tl-item:nth-child(1) .tl-dot{border-color:var(--lime)}
+.tl-item:nth-child(2) .tl-dot{border-color:var(--purple)}
+.tl-item:nth-child(3) .tl-dot{border-color:var(--orange)}
+.tl-year{font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem}
+.tl-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.2rem}
+.tl-board{font-size:0.82rem;color:var(--muted);margin-bottom:0.5rem}
+.score-badge{display:inline-flex;align-items:center;gap:0.4rem;padding:0.25rem 0.75rem;border-radius:50px;font-size:0.78rem;font-weight:600;border:1px solid}
+.sb-lime{background:rgba(200,255,0,0.08);color:var(--lime);border-color:rgba(200,255,0,0.2)}
+.sb-purple{background:rgba(167,139,250,0.08);color:var(--purple);border-color:rgba(167,139,250,0.2)}
+.sb-orange{background:rgba(255,107,53,0.08);color:var(--orange);border-color:rgba(255,107,53,0.2)}
 
-/* Skills — colourful cards */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
-.skill-card{border-radius:14px;padding:1.3rem;border:1px solid;transition:transform 0.2s}
-.skill-card:hover{transform:translateY(-3px)}
-.sk1{background:rgba(200,255,0,0.05);border-color:rgba(200,255,0,0.15)}
-.sk2{background:rgba(167,139,250,0.05);border-color:rgba(167,139,250,0.15)}
-.sk3{background:rgba(56,189,248,0.05);border-color:rgba(56,189,248,0.15)}
-.sk4{background:rgba(255,107,53,0.05);border-color:rgba(255,107,53,0.15)}
-.sk5{background:rgba(236,72,153,0.05);border-color:rgba(236,72,153,0.15)}
-.sk6{background:rgba(52,211,153,0.05);border-color:rgba(52,211,153,0.15)}
-.skill-card .sk-icon{font-size:1.5rem;margin-bottom:0.6rem}
-.skill-card h4{font-family:'Syne',sans-serif;font-size:0.92rem;font-weight:700;margin-bottom:0.25rem}
-.skill-card p{font-size:0.78rem;color:var(--muted)}
-.sk1 h4{color:#c8ff00}.sk2 h4{color:#a78bfa}.sk3 h4{color:#38bdf8}.sk4 h4{color:#ff6b35}.sk5 h4{color:#ec4899}.sk6 h4{color:#34d399}
+/* ACHIEVEMENTS */
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:2rem}
+.ach-card{background:var(--s1);border:1px solid var(--border);border-radius:16px;padding:1.5rem;transition:all 0.25s;position:relative;overflow:hidden}
+.ach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.ach-card:nth-child(1)::before{background:linear-gradient(90deg,var(--lime),transparent)}
+.ach-card:nth-child(2)::before{background:linear-gradient(90deg,var(--purple),transparent)}
+.ach-card:nth-child(3)::before{background:linear-gradient(90deg,var(--orange),transparent)}
+.ach-card:nth-child(4)::before{background:linear-gradient(90deg,var(--blue),transparent)}
+.ach-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,0.12)}
+.ach-icon{font-size:1.4rem;margin-bottom:0.8rem}
+.ach-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.35rem}
+.ach-desc{font-size:0.8rem;color:var(--muted);line-height:1.55}
 
-/* About */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2rem}
-@media(max-width:680px){.about-grid{grid-template-columns:1fr}.works-grid{grid-template-columns:1fr}}
-.about-text p{color:var(--muted);line-height:1.85;font-size:0.93rem;margin-bottom:1rem}
-.hl{font-weight:500;color:var(--text)}
-.stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
-.stat{border-radius:12px;padding:1.2rem;border:1px solid}
-.st1{background:rgba(200,255,0,0.05);border-color:rgba(200,255,0,0.15)}
-.st2{background:rgba(167,139,250,0.05);border-color:rgba(167,139,250,0.15)}
-.st3{background:rgba(56,189,248,0.05);border-color:rgba(56,189,248,0.15)}
-.st4{background:rgba(255,107,53,0.05);border-color:rgba(255,107,53,0.15)}
-.stat .num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;line-height:1}
-.st1 .num{color:#c8ff00}.st2 .num{color:#a78bfa}.st3 .num{color:#38bdf8}.st4 .num{color:#ff6b35}
-.stat .lbl{font-size:0.76rem;color:var(--muted);margin-top:0.3rem}
+/* RESUME SECTION */
+.resume-card{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:2.5rem;margin-top:2rem;position:relative;overflow:hidden}
+.resume-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,255,0,0.03),rgba(167,139,250,0.03));pointer-events:none}
+.resume-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.resume-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:0.3rem}
+.resume-loc{font-size:0.82rem;color:var(--muted)}
+.resume-contact{display:flex;flex-direction:column;gap:0.4rem;text-align:right}
+.rc-item{font-size:0.8rem;color:var(--muted)}
+.rc-item a{color:var(--lime);text-decoration:none}
+.resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:640px){.resume-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(3rem,10vw,7rem)}}
+.res-section h4{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+.res-skill-list{display:flex;flex-direction:column;gap:0.6rem}
+.rsl-item{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem}
+.rsl-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.res-edu-list{display:flex;flex-direction:column;gap:0.8rem}
+.rel-item{font-size:0.82rem}
+.rel-title{font-weight:500;margin-bottom:0.1rem}
+.rel-info{color:var(--muted);font-size:0.76rem}
+.res-obj{font-size:0.83rem;color:var(--muted);line-height:1.7;grid-column:1/-1}
+.dl-btn{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,255,0,0.1);border:1px solid rgba(200,255,0,0.2);color:var(--lime);font-size:0.82rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:50px;text-decoration:none;margin-top:1.5rem;transition:all 0.2s;cursor:pointer}
+.dl-btn:hover{background:rgba(200,255,0,0.18)}
 
-.cta-section{margin:2rem 2rem 4rem;max-width:1060px;margin-left:auto;margin-right:auto;background:linear-gradient(135deg,rgba(200,255,0,0.05),rgba(167,139,250,0.05));border:1px solid rgba(200,255,0,0.15);border-radius:24px;padding:3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;position:relative;z-index:1}
-.cta-section::before{content:'';position:absolute;inset:0;border-radius:24px;background:linear-gradient(135deg,rgba(200,255,0,0.03),rgba(167,139,250,0.03));pointer-events:none}
-.cta-text h2{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:0.5rem}
-.cta-text p{color:var(--muted);font-size:0.88rem}
-.cta-actions{display:flex;gap:1rem;flex-wrap:wrap}
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+@media(max-width:580px){.contact-grid{grid-template-columns:1fr}}
+.contact-card{background:var(--s1);border:1px solid var(--border);border-radius:16px;padding:1.5rem;display:flex;align-items:center;gap:1rem;text-decoration:none;transition:all 0.2s;color:var(--text)}
+.contact-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.15)}
+.cc-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.cc-label{font-size:0.72rem;color:var(--muted);margin-bottom:0.2rem}
+.cc-value{font-size:0.85rem;font-weight:500}
+.ci1{background:rgba(200,255,0,0.1)}.ci2{background:rgba(167,139,250,0.1)}.ci3{background:rgba(56,189,248,0.1)}.ci4{background:rgba(255,107,53,0.1)}
 
-footer{border-top:1px solid var(--border);padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;max-width:1100px;margin:0 auto;position:relative;z-index:1}
-footer .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem}
-footer .logo span{color:var(--accent)}
-footer p{font-size:0.78rem;color:var(--muted)}
-.socials{display:flex;gap:0.6rem}
-.socials a{width:34px;height:34px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:0.72rem;font-family:'Syne',sans-serif;font-weight:700;transition:border-color 0.2s,color 0.2s}
-.socials a.gh:hover{border-color:#a78bfa;color:#a78bfa}
-.socials a.em:hover{border-color:#c8ff00;color:#c8ff00}
-.socials a.li:hover{border-color:#38bdf8;color:#38bdf8}
+/* BIG CTA */
+.big-cta{margin:2rem 0 4rem;padding:0 2.5rem;position:relative;z-index:1}
+.big-cta-inner{background:linear-gradient(135deg,rgba(200,255,0,0.06),rgba(167,139,250,0.06));border:1px solid rgba(200,255,0,0.12);border-radius:24px;padding:3.5rem;text-align:center;position:relative;overflow:hidden}
+.big-cta-inner::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,0.05),transparent 70%);top:-100px;left:50%;transform:translateX(-50%);pointer-events:none}
+.big-cta h2{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:0.75rem}
+.big-cta p{color:var(--muted);margin-bottom:2rem;font-size:0.9rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.ft-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem}
+.ft-logo em{color:var(--lime);font-style:normal}
+footer p{font-size:0.76rem;color:var(--muted)}
+.ft-links{display:flex;gap:0.5rem}
+.ft-link{width:32px;height:32px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.68rem;font-weight:700;font-family:'Syne',sans-serif;color:var(--muted);transition:all 0.2s}
+.fl-gh:hover{border-color:var(--purple);color:var(--purple)}
+.fl-em:hover{border-color:var(--lime);color:var(--lime)}
 </style>
 </head>
 <body>
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
-<div class="blob blob4"></div>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="orb o4"></div>
 
+<!-- NAV -->
 <nav>
-  <div class="logo">ak<span>.</span></div>
-  <ul>
-    <li><a href="#">Work</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Skills</a></li>
-  </ul>
-  <a class="nav-cta" href="mailto:its.akash.8858@gmail.com">Hire Me</a>
+  <div class="logo">ak<em>.</em>dev</div>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="hire-btn" href="mailto:its.akash.8858@gmail.com">Hire Me ↗</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-tag">
-    <span class="dot"></span>
-    Available for work — Fresh &amp; Hungry 🔥
-  </div>
+  <div class="avail-badge"><span class="dot"></span>Available for Internship & Work</div>
   <h1>
-    Hi, I'm<br>
-    <span class="g-lime">Akash</span> —<br>
-    <span class="strike">just a student</span><br>
-    <span class="g-purple">a builder.</span>
+    <span class="line1">Hey, I'm</span>
+    <span class="name-grad">Akash Kumar</span>
+    <div class="title-line">
+      <span class="title-text">Builder.</span>
+      <span class="strike-text">Student.</span>
+    </div>
   </h1>
-  <p class="hero-sub">12th pass. Already coding in C &amp; C++. Already exploring AI. Just getting started — and that's the exciting part.</p>
-  <div class="hero-actions">
-    <a class="btn-main" href="mailto:its.akash.8858@gmail.com">Work With Me</a>
-    <a class="btn-ghost" href="https://github.com/Akash-kumar" target="_blank">GitHub ↗</a>
+  <p class="hero-desc">
+    12th pass from UP Board. Already coding in <strong>C & C++</strong>, already exploring <strong>Artificial Intelligence</strong>. Not waiting for a degree to start building — just looking for the right opportunity to prove myself.
+  </p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="mailto:its.akash.8858@gmail.com">Work With Me</a>
+    <a class="btn-sec" href="https://github.com/Akash-kumar" target="_blank">GitHub ↗</a>
+    <a class="btn-sec" href="#resume">View Resume</a>
   </div>
-  <div class="badge-row">
-    <span class="badge b-c">C Language</span>
-    <span class="badge b-cpp">C++</span>
-    <span class="badge b-ai">Basic AI</span>
-    <span class="badge b-fresh">12th Pass · 2025</span>
+  <div class="score-row">
+    <div class="score-item"><span class="score-num sn1">85%</span><span class="score-label">Class 10th</span></div>
+    <div class="score-item"><span class="score-num sn2">75.6%</span><span class="score-label">Class 12th</span></div>
+    <div class="score-item"><span class="score-num sn3">85%</span><span class="score-label">CUET UG</span></div>
   </div>
 </section>
 
-<div class="marquee-wrap">
-  <div class="marquee">
-    <span class="s1">C Programming</span><span>✦</span>
-    <span class="s2">C++</span><span>✦</span>
-    <span class="s3">Artificial Intelligence</span><span>✦</span>
-    <span class="s4">Problem Solving</span><span>✦</span>
-    <span class="s1">Logic Building</span><span>✦</span>
-    <span class="s2">Fast Learner</span><span>✦</span>
-    <span class="s3">Open Source</span><span>✦</span>
-    <span class="s4">Akash Kumar</span><span>✦</span>
-    <span class="s1">C Programming</span><span>✦</span>
-    <span class="s2">C++</span><span>✦</span>
-    <span class="s3">Artificial Intelligence</span><span>✦</span>
-    <span class="s4">Problem Solving</span><span>✦</span>
-    <span class="s1">Logic Building</span><span>✦</span>
-    <span class="s2">Fast Learner</span><span>✦</span>
-    <span class="s3">Open Source</span><span>✦</span>
-    <span class="s4">Akash Kumar</span><span>✦</span>
+<!-- MARQUEE -->
+<div class="marq-wrap">
+  <div class="marq-track">
+    <div class="marq-item"><span class="mi1">C Programming</span><span class="sep">✦</span><span class="mi2">C++</span><span class="sep">✦</span><span class="mi3">Artificial Intelligence</span><span class="sep">✦</span><span class="mi4">CUET 85%</span><span class="sep">✦</span><span class="mi5">Fast Learner</span><span class="sep">✦</span><span class="mi1">Ayodhya, UP</span><span class="sep">✦</span><span class="mi2">Open to Work</span><span class="sep">✦</span><span class="mi3">Problem Solver</span><span class="sep">✦</span></div>
+    <div class="marq-item"><span class="mi1">C Programming</span><span class="sep">✦</span><span class="mi2">C++</span><span class="sep">✦</span><span class="mi3">Artificial Intelligence</span><span class="sep">✦</span><span class="mi4">CUET 85%</span><span class="sep">✦</span><span class="mi5">Fast Learner</span><span class="sep">✦</span><span class="mi1">Ayodhya, UP</span><span class="sep">✦</span><span class="mi2">Open to Work</span><span class="sep">✦</span><span class="mi3">Problem Solver</span><span class="sep">✦</span></div>
   </div>
 </div>
 
-<section class="section">
-  <div class="section-label sl-purple">Skills &amp; Tech</div>
-  <h2 class="section-title">What I know so far</h2>
-  <div class="skills-grid">
-    <div class="skill-card sk3">
-      <div class="sk-icon">⚙️</div>
-      <h4>C Language</h4>
-      <p>Pointers, memory management, data structures</p>
-    </div>
-    <div class="skill-card sk2">
-      <div class="sk-icon">🧩</div>
-      <h4>C++</h4>
-      <p>OOP, classes, STL basics, problem solving</p>
-    </div>
-    <div class="skill-card sk4">
-      <div class="sk-icon">🤖</div>
-      <h4>Basic AI</h4>
-      <p>Concepts of ML, how models learn, AI tools</p>
-    </div>
-    <div class="skill-card sk1">
-      <div class="sk-icon">🧠</div>
-      <h4>Logic &amp; DSA</h4>
-      <p>Algorithms, patterns, competitive thinking</p>
-    </div>
-    <div class="skill-card sk5">
-      <div class="sk-icon">📚</div>
-      <h4>Always Learning</h4>
-      <p>Python, Web Dev next on the list</p>
-    </div>
-    <div class="skill-card sk6">
-      <div class="sk-icon">💡</div>
-      <h4>Problem Solver</h4>
-      <p>Love breaking down complex problems</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-label sl-lime">Projects</div>
-  <h2 class="section-title">Things I've built</h2>
-  <div class="works-grid">
-    <div class="work-card">
-      <div class="work-thumb g-t1">🗃️<span class="work-label">C Language</span></div>
-      <div class="work-info">
-        <h3>Student Record System</h3>
-        <p>File handling, structs and CRUD ops in pure C. Clean and functional.</p>
+<!-- SKILLS -->
+<section class="sec" id="skills">
+  <div class="sec-tag st-lime">What I know</div>
+  <h2>Skills & Tech</h2>
+  <p class="sec-sub">Honest skills — no exaggeration, just what I actually know and am building on.</p>
+  <div class="skills-wrap">
+    <div class="skill-block skc1">
+      <div class="sk-emoji">⚙️</div>
+      <div class="sk-name">C Language</div>
+      <div class="sk-desc">Variables, loops, conditions, functions, basic file handling</div>
+      <div class="sk-level" style="color:var(--blue)">
+        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div><div class="sk-dot off"></div>
       </div>
     </div>
-    <div class="work-card">
-      <div class="work-thumb g-t2">🎮<span class="work-label">C++</span></div>
-      <div class="work-info">
-        <h3>Mini Game in C++</h3>
-        <p>OOP-based console game. Classes, inheritance, logic flow.</p>
+    <div class="skill-block skc2">
+      <div class="sk-emoji">🧩</div>
+      <div class="sk-name">C++</div>
+      <div class="sk-desc">OOP basics, classes, problem solving approach</div>
+      <div class="sk-level" style="color:var(--purple)">
+        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div><div class="sk-dot off"></div><div class="sk-dot off"></div>
       </div>
     </div>
-    <div class="work-card">
-      <div class="work-thumb g-t3">🤖<span class="work-label">AI Exploration</span></div>
-      <div class="work-info">
-        <h3>AI Experiments</h3>
-        <p>Learning how models work, playing with basic AI tools and concepts.</p>
+    <div class="skill-block skc3">
+      <div class="sk-emoji">🤖</div>
+      <div class="sk-name">AI Basics</div>
+      <div class="sk-desc">AI concepts, ML fundamentals, using AI tools</div>
+      <div class="sk-level" style="color:var(--orange)">
+        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div><div class="sk-dot off"></div><div class="sk-dot off"></div>
+      </div>
+    </div>
+    <div class="skill-block skc4">
+      <div class="sk-emoji">💻</div>
+      <div class="sk-name">MS Word & Computer</div>
+      <div class="sk-desc">Document creation, formatting, basic computer operations</div>
+      <div class="sk-level" style="color:var(--lime)">
+        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div>
+      </div>
+    </div>
+    <div class="skill-block skc5">
+      <div class="sk-emoji">📧</div>
+      <div class="sk-name">Communication</div>
+      <div class="sk-desc">Email, internet browsing, Hindi & basic English</div>
+      <div class="sk-level" style="color:var(--pink)">
+        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div><div class="sk-dot off"></div>
+      </div>
+    </div>
+    <div class="skill-block skc6">
+      <div class="sk-emoji">🚀</div>
+      <div class="sk-name">Always Learning</div>
+      <div class="sk-desc">Python & Web Dev next on the roadmap</div>
+      <div class="sk-level" style="color:var(--green)">
+        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="section-label sl-orange">About</div>
-  <h2 class="section-title">Who's Akash?</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>I'm <span class="hl">Akash Kumar</span> — a fresh 12th pass student from India with a real passion for coding and technology.</p>
-      <p>I know <span class="hl">C and C++</span> and I'm already diving into the world of <span class="hl">Artificial Intelligence</span>. I'm not waiting for a degree to start building.</p>
-      <p>I learn fast, work hard, and I'm looking for opportunities where I can <span class="hl">grow, contribute, and prove myself.</span> If you believe in potential, let's talk.</p>
-      <p style="margin-top:1.2rem"><a href="mailto:its.akash.8858@gmail.com" style="color:#c8ff00;text-decoration:none;font-weight:500;font-size:0.9rem">📧 its.akash.8858@gmail.com</a></p>
+<!-- EDUCATION -->
+<section class="sec" id="education">
+  <div class="sec-tag st-purple">Background</div>
+  <h2>Education</h2>
+  <p class="sec-sub">Strong academic performance across the board.</p>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">National Level · 2024</div>
+      <div class="tl-title">CUET UG Examination</div>
+      <div class="tl-board">NTA (National Testing Agency)</div>
+      <span class="score-badge sb-lime">🏆 85% — National Level</span>
     </div>
-    <div class="stat-cards">
-      <div class="stat st1"><div class="num">C/C++</div><div class="lbl">Core languages</div></div>
-      <div class="stat st2"><div class="num">AI</div><div class="lbl">Basic knowledge</div></div>
-      <div class="stat st3"><div class="num">∞</div><div class="lbl">Will to learn</div></div>
-      <div class="stat st4"><div class="num">0→∞</div><div class="lbl">Growth mindset</div></div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">Class 12th · Intermediate</div>
+      <div class="tl-title">Intermediate (12th)</div>
+      <div class="tl-board">UP Board · Uttar Pradesh</div>
+      <span class="score-badge sb-purple">📘 75.60% — Passed</span>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">Class 10th · High School</div>
+      <div class="tl-title">High School (10th)</div>
+      <div class="tl-board">UP Board · Uttar Pradesh</div>
+      <span class="score-badge sb-orange">⭐ 85.16% — Excellent</span>
     </div>
   </div>
 </section>
 
-<div class="cta-section">
-  <div class="cta-text">
+<!-- ACHIEVEMENTS -->
+<section class="sec">
+  <div class="sec-tag st-orange">Wins</div>
+  <h2>Achievements</h2>
+  <p class="sec-sub">Results that speak for themselves.</p>
+  <div class="ach-grid">
+    <div class="ach-card">
+      <div class="ach-icon">🎯</div>
+      <div class="ach-title">CUET 85% — National Level</div>
+      <div class="ach-desc">Scored 85 percentile in NTA's national level university entrance exam. Competing with lakhs of students.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-icon">⭐</div>
+      <div class="ach-title">Class 10th — 85.16%</div>
+      <div class="ach-desc">Excellent academic performance in UP Board High School examination.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-icon">🏅</div>
+      <div class="ach-title">Sports Participation Certificate</div>
+      <div class="ach-desc">Active participant in sports competitions. Shows discipline, teamwork and physical fitness.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-icon">💡</div>
+      <div class="ach-title">Self-Taught Programmer</div>
+      <div class="ach-desc">Learned C and C++ independently, exploring AI on the side — no college yet, already building.</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section class="sec" id="resume">
+  <div class="sec-tag st-blue">Full Details</div>
+  <h2>Resume</h2>
+  <p class="sec-sub">Complete professional summary — everything a recruiter needs.</p>
+  <div class="resume-card">
+    <div class="resume-header">
+      <div>
+        <div class="resume-name">Akash Kumar</div>
+        <div class="resume-loc">📍 Bhadar Khurd, Tarun, Bikapur, Ayodhya, Uttar Pradesh</div>
+      </div>
+      <div class="resume-contact">
+        <div class="rc-item">📞 <a href="tel:8429111532">8429111532</a></div>
+        <div class="rc-item">✉️ <a href="mailto:its.akash.8858@gmail.com">its.akash.8858@gmail.com</a></div>
+        <div class="rc-item">🐙 <a href="https://github.com/Akash-kumar" target="_blank" style="color:var(--purple)">github.com/Akash-kumar</a></div>
+      </div>
+    </div>
+    <div class="resume-grid">
+      <div>
+        <div class="res-section">
+          <h4>Technical Skills</h4>
+          <div class="res-skill-list">
+            <div class="rsl-item"><div class="rsl-dot" style="background:var(--blue)"></div>Basic Computer Operations</div>
+            <div class="rsl-item"><div class="rsl-dot" style="background:var(--purple)"></div>MS Word — Document Typing & Formatting</div>
+            <div class="rsl-item"><div class="rsl-dot" style="background:var(--lime)"></div>C Programming Language — Basic Level</div>
+            <div class="rsl-item"><div class="rsl-dot" style="background:var(--orange)"></div>Artificial Intelligence — Basic Knowledge</div>
+            <div class="rsl-item"><div class="rsl-dot" style="background:var(--pink)"></div>Typing — English</div>
+            <div class="rsl-item"><div class="rsl-dot" style="background:var(--green)"></div>Internet Browsing & Email Communication</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="res-section">
+          <h4>Education</h4>
+          <div class="res-edu-list">
+            <div class="rel-item">
+              <div class="rel-title">CUET UG Exam <span style="color:var(--lime)">85%</span></div>
+              <div class="rel-info">NTA (National) · Passed</div>
+            </div>
+            <div class="rel-item">
+              <div class="rel-title">12th (Intermediate) <span style="color:var(--purple)">75.60%</span></div>
+              <div class="rel-info">UP Board · Passed</div>
+            </div>
+            <div class="rel-item">
+              <div class="rel-title">10th (High School) <span style="color:var(--orange)">85.16%</span></div>
+              <div class="rel-info">UP Board · Passed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="res-obj">
+        <div class="res-section">
+          <h4>Objective</h4>
+          <p style="font-size:0.83rem;color:var(--muted);line-height:1.7">A motivated and hardworking fresher seeking an internship opportunity where I can apply my computer skills and academic knowledge. I have a strong interest in technology and programming, and I am eager to learn and grow in a professional environment.</p>
+        </div>
+      </div>
+    </div>
+    <a class="dl-btn" href="mailto:its.akash.8858@gmail.com?subject=Resume Request — Akash Kumar">📄 Request Full Resume</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="sec-tag st-pink">Get In Touch</div>
+  <h2>Contact</h2>
+  <p class="sec-sub">Reach out — always happy to connect.</p>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:its.akash.8858@gmail.com">
+      <div class="cc-icon ci1">✉️</div>
+      <div><div class="cc-label">Email</div><div class="cc-value">its.akash.8858@gmail.com</div></div>
+    </a>
+    <a class="contact-card" href="tel:8429111532">
+      <div class="cc-icon ci2">📞</div>
+      <div><div class="cc-label">Phone</div><div class="cc-value">8429111532</div></div>
+    </a>
+    <a class="contact-card" href="https://github.com/Akash-kumar" target="_blank">
+      <div class="cc-icon ci3">🐙</div>
+      <div><div class="cc-label">GitHub</div><div class="cc-value">github.com/Akash-kumar</div></div>
+    </a>
+    <div class="contact-card" style="cursor:default">
+      <div class="cc-icon ci4">📍</div>
+      <div><div class="cc-label">Location</div><div class="cc-value">Ayodhya, Uttar Pradesh</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIG CTA -->
+<div class="big-cta">
+  <div class="big-cta-inner">
     <h2>Give me a chance.<br>I won't disappoint. 🚀</h2>
-    <p>Fresh talent, serious about growing. Open to internships &amp; junior roles.</p>
-  </div>
-  <div class="cta-actions">
-    <a class="btn-main" href="mailto:its.akash.8858@gmail.com">its.akash.8858@gmail.com</a>
-    <a class="btn-ghost" href="https://github.com/Akash-kumar" target="_blank">GitHub ↗</a>
+    <p>Fresh, hungry, and ready to learn. Open to internships & entry-level roles.</p>
+    <div class="cta-btns">
+      <a class="btn-primary" href="mailto:its.akash.8858@gmail.com">Email Me Now</a>
+      <a class="btn-sec" href="tel:8429111532">Call Me</a>
+    </div>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
-  <div class="logo">ak<span>.</span></div>
-  <p>© 2025 Akash Kumar. Built with passion.</p>
-  <div class="socials">
-    <a class="gh" href="https://github.com/Akash-kumar" target="_blank">GH</a>
-    <a class="em" href="mailto:its.akash.8858@gmail.com">✉</a>
-    <a class="li" href="#">LI</a>
+  <div class="ft-logo">ak<em>.</em>dev</div>
+  <p>© 2025 Akash Kumar · Ayodhya, UP</p>
+  <div class="ft-links">
+    <a class="ft-link fl-gh" href="https://github.com/Akash-kumar" target="_blank">GH</a>
+    <a class="ft-link fl-em" href="mailto:its.akash.8858@gmail.com">✉</a>
   </div>
 </footer>
 </body>
