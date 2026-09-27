@@ -1,456 +1,1507 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akash Kumar — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#080810;
-  --s1:#0f0f1a;
-  --s2:#16162a;
-  --s3:#1e1e35;
-  --lime:#c8ff00;
-  --purple:#a78bfa;
-  --orange:#ff6b35;
-  --blue:#38bdf8;
-  --pink:#f472b6;
-  --green:#34d399;
-  --text:#f0f0f8;
-  --muted:#7070a0;
-  --border:rgba(255,255,255,0.07);
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akash Kumar — BCA Student @ Chandigarh University | Aspiring Software Engineer</title>
 
-/* bg orbs */
-.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;mix-blend-mode:screen}
-.o1{width:700px;height:700px;background:radial-gradient(circle,rgba(200,255,0,0.06) 0%,transparent 70%);top:-200px;left:-200px}
-.o2{width:600px;height:600px;background:radial-gradient(circle,rgba(167,139,250,0.07) 0%,transparent 70%);top:30%;right:-200px}
-.o3{width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,53,0.05) 0%,transparent 70%);bottom:0;left:20%}
-.o4{width:400px;height:400px;background:radial-gradient(circle,rgba(56,189,248,0.05) 0%,transparent 70%);top:70%;left:5%}
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Portfolio of Akash Kumar — BCA Student at Chandigarh University and Aspiring Software Engineer skilled in C, C++, Java, Data Structures, Algorithms, and AI. 85th Percentile in CUET UG.">
+  <meta name="keywords"
+    content="Akash Kumar, BCA Chandigarh University, Software Engineer, Java, C++, C Programming, AI, Ayodhya, Developer Portfolio, CUET 85%">
+  <meta name="author" content="Akash Kumar">
 
-/* NAV */
-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;z:100;background:rgba(8,8,16,0.8);backdrop-filter:blur(20px);z-index:200}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-0.04em;color:var(--text)}
-.logo em{color:var(--lime);font-style:normal}
-.nav-links{display:flex;gap:0.25rem}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;padding:0.4rem 0.9rem;border-radius:50px;transition:all 0.2s}
-.nav-links a:hover{color:var(--text);background:var(--s2)}
-.hire-btn{background:var(--lime);color:#000;font-weight:600;font-size:0.82rem;padding:0.5rem 1.3rem;border-radius:50px;text-decoration:none;letter-spacing:-0.01em;transition:transform 0.2s,opacity 0.2s}
-.hire-btn:hover{opacity:0.88;transform:scale(0.97)}
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Akash Kumar — BCA Student @ Chandigarh University | Software Engineer">
+  <meta property="og:description"
+    content="BCA Student at Chandigarh University with strong foundations in C/C++, Java, algorithmic problem solving, and AI. Open for software engineering internships and projects.">
+  <meta property="og:type" content="website">
 
-/* HERO */
-.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:4rem 2.5rem 3rem;max-width:1200px;margin:0 auto;position:relative;z-index:1}
-.avail-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1rem;border-radius:50px;border:1px solid rgba(200,255,0,0.25);background:rgba(200,255,0,0.06);font-size:0.75rem;color:var(--lime);font-weight:500;letter-spacing:0.02em;margin-bottom:2.5rem;width:fit-content}
-.avail-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(200,255,0,0.4)}50%{opacity:0.5;box-shadow:0 0 0 4px rgba(200,255,0,0)}}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:800;line-height:0.95;letter-spacing:-0.05em;margin-bottom:2rem}
-.line1{color:var(--muted);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:400;font-family:'DM Sans',sans-serif;display:block;margin-bottom:0.5rem}
-.name-grad{background:linear-gradient(135deg,#c8ff00 0%,#86efac 50%,#38bdf8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
-.title-line{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.title-text{color:var(--text)}
-.strike-text{text-decoration:line-through;color:var(--s3);-webkit-text-fill-color:var(--s3);text-decoration-color:var(--purple)}
-.hero-desc{font-size:1.05rem;color:var(--muted);max-width:520px;line-height:1.75;margin-bottom:2.5rem}
-.hero-desc strong{color:var(--text);font-weight:500}
-.hero-ctas{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:3rem}
-.btn-primary{background:var(--lime);color:#000;font-weight:600;font-size:0.9rem;padding:0.85rem 2rem;border-radius:50px;text-decoration:none;transition:transform 0.2s}
-.btn-primary:hover{transform:scale(0.97)}
-.btn-sec{border:1px solid var(--border);color:var(--text);font-size:0.9rem;font-weight:500;padding:0.85rem 2rem;border-radius:50px;text-decoration:none;transition:all 0.2s}
-.btn-sec:hover{background:var(--s2);border-color:rgba(255,255,255,0.15)}
-.score-row{display:flex;gap:2rem;flex-wrap:wrap}
-.score-item{display:flex;flex-direction:column;gap:0.2rem}
-.score-num{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800}
-.score-label{font-size:0.74rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
-.sn1{color:var(--lime)}.sn2{color:var(--purple)}.sn3{color:var(--blue)}
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-/* MARQUEE */
-.marq-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0.9rem 0;position:relative;z-index:1;margin:0}
-.marq-track{display:flex;gap:2rem;animation:marq 25s linear infinite;width:max-content}
-@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.marq-item{display:flex;align-items:center;gap:2rem;white-space:nowrap;font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase}
-.mi1{color:var(--lime)}.mi2{color:var(--purple)}.mi3{color:var(--orange)}.mi4{color:var(--blue)}.mi5{color:var(--pink)}.sep{color:var(--border)}
-
-/* SECTIONS */
-.sec{padding:5rem 2.5rem;max-width:1200px;margin:0 auto;position:relative;z-index:1}
-.sec-tag{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem}
-.st-lime{color:var(--lime)}.st-purple{color:var(--purple)}.st-orange{color:var(--orange)}.st-blue{color:var(--blue)}.st-pink{color:var(--pink)}
-.sec-tag::before{content:'';width:16px;height:1px;background:currentColor}
-.sec h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:0.5rem;line-height:1.1}
-.sec-sub{color:var(--muted);font-size:0.9rem;margin-bottom:2.5rem}
-
-/* SKILLS */
-.skills-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-top:2rem}
-.skill-block{background:var(--bg);padding:1.8rem;transition:background 0.2s;cursor:default}
-.skill-block:hover{background:var(--s1)}
-.sk-emoji{font-size:1.6rem;margin-bottom:0.8rem}
-.sk-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.3rem}
-.sk-desc{font-size:0.78rem;color:var(--muted);line-height:1.5}
-.sk-level{display:flex;gap:3px;margin-top:0.75rem}
-.sk-dot{width:6px;height:6px;border-radius:50%}
-.sk-dot.on{background:currentColor;opacity:1}
-.sk-dot.off{background:var(--s3);opacity:1}
-.skc1{color:var(--blue)}.skc2{color:var(--purple)}.skc3{color:var(--orange)}.skc4{color:var(--lime)}.skc5{color:var(--pink)}.skc6{color:var(--green)}
-
-/* EDUCATION / TIMELINE */
-.timeline{position:relative;margin-top:2rem;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--lime),var(--purple),var(--orange))}
-.tl-item{position:relative;padding:0 0 2.5rem 2rem}
-.tl-item:last-child{padding-bottom:0}
-.tl-dot{position:absolute;left:-0.5rem;top:0.35rem;width:1rem;height:1rem;border-radius:50%;border:2px solid;background:var(--bg)}
-.tl-item:nth-child(1) .tl-dot{border-color:var(--lime)}
-.tl-item:nth-child(2) .tl-dot{border-color:var(--purple)}
-.tl-item:nth-child(3) .tl-dot{border-color:var(--orange)}
-.tl-year{font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem}
-.tl-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.2rem}
-.tl-board{font-size:0.82rem;color:var(--muted);margin-bottom:0.5rem}
-.score-badge{display:inline-flex;align-items:center;gap:0.4rem;padding:0.25rem 0.75rem;border-radius:50px;font-size:0.78rem;font-weight:600;border:1px solid}
-.sb-lime{background:rgba(200,255,0,0.08);color:var(--lime);border-color:rgba(200,255,0,0.2)}
-.sb-purple{background:rgba(167,139,250,0.08);color:var(--purple);border-color:rgba(167,139,250,0.2)}
-.sb-orange{background:rgba(255,107,53,0.08);color:var(--orange);border-color:rgba(255,107,53,0.2)}
-
-/* ACHIEVEMENTS */
-.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:2rem}
-.ach-card{background:var(--s1);border:1px solid var(--border);border-radius:16px;padding:1.5rem;transition:all 0.25s;position:relative;overflow:hidden}
-.ach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
-.ach-card:nth-child(1)::before{background:linear-gradient(90deg,var(--lime),transparent)}
-.ach-card:nth-child(2)::before{background:linear-gradient(90deg,var(--purple),transparent)}
-.ach-card:nth-child(3)::before{background:linear-gradient(90deg,var(--orange),transparent)}
-.ach-card:nth-child(4)::before{background:linear-gradient(90deg,var(--blue),transparent)}
-.ach-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,0.12)}
-.ach-icon{font-size:1.4rem;margin-bottom:0.8rem}
-.ach-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.35rem}
-.ach-desc{font-size:0.8rem;color:var(--muted);line-height:1.55}
-
-/* RESUME SECTION */
-.resume-card{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:2.5rem;margin-top:2rem;position:relative;overflow:hidden}
-.resume-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,255,0,0.03),rgba(167,139,250,0.03));pointer-events:none}
-.resume-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
-.resume-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:0.3rem}
-.resume-loc{font-size:0.82rem;color:var(--muted)}
-.resume-contact{display:flex;flex-direction:column;gap:0.4rem;text-align:right}
-.rc-item{font-size:0.8rem;color:var(--muted)}
-.rc-item a{color:var(--lime);text-decoration:none}
-.resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-@media(max-width:640px){.resume-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(3rem,10vw,7rem)}}
-.res-section h4{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
-.res-skill-list{display:flex;flex-direction:column;gap:0.6rem}
-.rsl-item{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem}
-.rsl-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
-.res-edu-list{display:flex;flex-direction:column;gap:0.8rem}
-.rel-item{font-size:0.82rem}
-.rel-title{font-weight:500;margin-bottom:0.1rem}
-.rel-info{color:var(--muted);font-size:0.76rem}
-.res-obj{font-size:0.83rem;color:var(--muted);line-height:1.7;grid-column:1/-1}
-.dl-btn{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,255,0,0.1);border:1px solid rgba(200,255,0,0.2);color:var(--lime);font-size:0.82rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:50px;text-decoration:none;margin-top:1.5rem;transition:all 0.2s;cursor:pointer}
-.dl-btn:hover{background:rgba(200,255,0,0.18)}
-
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
-@media(max-width:580px){.contact-grid{grid-template-columns:1fr}}
-.contact-card{background:var(--s1);border:1px solid var(--border);border-radius:16px;padding:1.5rem;display:flex;align-items:center;gap:1rem;text-decoration:none;transition:all 0.2s;color:var(--text)}
-.contact-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,0.15)}
-.cc-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.cc-label{font-size:0.72rem;color:var(--muted);margin-bottom:0.2rem}
-.cc-value{font-size:0.85rem;font-weight:500}
-.ci1{background:rgba(200,255,0,0.1)}.ci2{background:rgba(167,139,250,0.1)}.ci3{background:rgba(56,189,248,0.1)}.ci4{background:rgba(255,107,53,0.1)}
-
-/* BIG CTA */
-.big-cta{margin:2rem 0 4rem;padding:0 2.5rem;position:relative;z-index:1}
-.big-cta-inner{background:linear-gradient(135deg,rgba(200,255,0,0.06),rgba(167,139,250,0.06));border:1px solid rgba(200,255,0,0.12);border-radius:24px;padding:3.5rem;text-align:center;position:relative;overflow:hidden}
-.big-cta-inner::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,0.05),transparent 70%);top:-100px;left:50%;transform:translateX(-50%);pointer-events:none}
-.big-cta h2{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-0.04em;margin-bottom:0.75rem}
-.big-cta p{color:var(--muted);margin-bottom:2rem;font-size:0.9rem}
-.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;max-width:1200px;margin:0 auto;position:relative;z-index:1}
-.ft-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem}
-.ft-logo em{color:var(--lime);font-style:normal}
-footer p{font-size:0.76rem;color:var(--muted)}
-.ft-links{display:flex;gap:0.5rem}
-.ft-link{width:32px;height:32px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.68rem;font-weight:700;font-family:'Syne',sans-serif;color:var(--muted);transition:all 0.2s}
-.fl-gh:hover{border-color:var(--purple);color:var(--purple)}
-.fl-em:hover{border-color:var(--lime);color:var(--lime)}
-</style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="orb o4"></div>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">ak<em>.</em>dev</div>
-  <div class="nav-links">
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <a class="hire-btn" href="mailto:akash.1532@outlook.in">Hire Me ↗</a>
-</nav>
+  <!-- Ambient Glows & Background Matrix -->
+  <div class="bg-grid"></div>
+  <div class="ambient-glow ambient-1"></div>
+  <div class="ambient-glow ambient-2"></div>
+  <div class="ambient-glow ambient-3"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="avail-badge"><span class="dot"></span>Available for Internship & Work</div>
-  <h1>
-    <span class="line1">Hey, I'm</span>
-    <span class="name-grad">Akash Kumar</span>
-    <div class="title-line">
-      <span class="title-text">Builder.</span>
-      <span class="strike-text">Student.</span>
-    </div>
-  </h1>
-  <p class="hero-desc">
-    12th pass from UP Board. Already coding in <strong>C & C++</strong>, already exploring <strong>Artificial Intelligence</strong>. Not waiting for a degree to start building — just looking for the right opportunity to prove myself.
-  </p>
-  <div class="hero-ctas">
-    <a class="btn-primary" href="mailto:akash.1532@outlook.in">Work With Me</a>
-    <a class="btn-sec" href="https://github.com/Akash-kumar" target="_blank">GitHub ↗</a>
-    <a class="btn-sec" href="#resume">View Resume</a>
-  </div>
-  <div class="score-row">
-    <div class="score-item"><span class="score-num sn1">85%</span><span class="score-label">Class 10th</span></div>
-    <div class="score-item"><span class="score-num sn2">75.6%</span><span class="score-label">Class 12th</span></div>
-    <div class="score-item"><span class="score-num sn3">85%</span><span class="score-label">CUET UG</span></div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marq-wrap">
-  <div class="marq-track">
-    <div class="marq-item"><span class="mi1">C Programming</span><span class="sep">✦</span><span class="mi2">C++</span><span class="sep">✦</span><span class="mi3">Artificial Intelligence</span><span class="sep">✦</span><span class="mi4">CUET 85%</span><span class="sep">✦</span><span class="mi5">Fast Learner</span><span class="sep">✦</span><span class="mi1">Ayodhya, UP</span><span class="sep">✦</span><span class="mi2">Open to Work</span><span class="sep">✦</span><span class="mi3">Problem Solver</span><span class="sep">✦</span></div>
-    <div class="marq-item"><span class="mi1">C Programming</span><span class="sep">✦</span><span class="mi2">C++</span><span class="sep">✦</span><span class="mi3">Artificial Intelligence</span><span class="sep">✦</span><span class="mi4">CUET 85%</span><span class="sep">✦</span><span class="mi5">Fast Learner</span><span class="sep">✦</span><span class="mi1">Ayodhya, UP</span><span class="sep">✦</span><span class="mi2">Open to Work</span><span class="sep">✦</span><span class="mi3">Problem Solver</span><span class="sep">✦</span></div>
-  </div>
-</div>
-
-<!-- SKILLS -->
-<section class="sec" id="skills">
-  <div class="sec-tag st-lime">What I know</div>
-  <h2>Skills & Tech</h2>
-  <p class="sec-sub">Honest skills — no exaggeration, just what I actually know and am building on.</p>
-  <div class="skills-wrap">
-    <div class="skill-block skc1">
-      <div class="sk-emoji">⚙️</div>
-      <div class="sk-name">C Language</div>
-      <div class="sk-desc">Variables, loops, conditions, functions, basic file handling</div>
-      <div class="sk-level" style="color:var(--blue)">
-        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div><div class="sk-dot off"></div>
-      </div>
-    </div>
-    <div class="skill-block skc2">
-      <div class="sk-emoji">🧩</div>
-      <div class="sk-name">C++</div>
-      <div class="sk-desc">OOP basics, classes, problem solving approach</div>
-      <div class="sk-level" style="color:var(--purple)">
-        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div><div class="sk-dot off"></div><div class="sk-dot off"></div>
-      </div>
-    </div>
-    <div class="skill-block skc3">
-      <div class="sk-emoji">🤖</div>
-      <div class="sk-name">AI Basics</div>
-      <div class="sk-desc">AI concepts, ML fundamentals, using AI tools</div>
-      <div class="sk-level" style="color:var(--orange)">
-        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div><div class="sk-dot off"></div><div class="sk-dot off"></div>
-      </div>
-    </div>
-    <div class="skill-block skc4">
-      <div class="sk-emoji">💻</div>
-      <div class="sk-name">MS Word & Computer</div>
-      <div class="sk-desc">Document creation, formatting, basic computer operations</div>
-      <div class="sk-level" style="color:var(--lime)">
-        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div>
-      </div>
-    </div>
-    <div class="skill-block skc5">
-      <div class="sk-emoji">📧</div>
-      <div class="sk-name">Communication</div>
-      <div class="sk-desc">Email, internet browsing, Hindi & basic English</div>
-      <div class="sk-level" style="color:var(--pink)">
-        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot off"></div><div class="sk-dot off"></div>
-      </div>
-    </div>
-    <div class="skill-block skc6">
-      <div class="sk-emoji">🚀</div>
-      <div class="sk-name">Always Learning</div>
-      <div class="sk-desc">Python & Web Dev next on the roadmap</div>
-      <div class="sk-level" style="color:var(--green)">
-        <div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div><div class="sk-dot on"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section class="sec" id="education">
-  <div class="sec-tag st-purple">Background</div>
-  <h2>Education</h2>
-  <p class="sec-sub">Strong academic performance across the board.</p>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-year">National Level · 2024</div>
-      <div class="tl-title">CUET UG Examination</div>
-      <div class="tl-board">NTA (National Testing Agency)</div>
-      <span class="score-badge sb-lime">🏆 85% — National Level</span>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-year">Class 12th · Intermediate</div>
-      <div class="tl-title">Intermediate (12th)</div>
-      <div class="tl-board">UP Board · Uttar Pradesh</div>
-      <span class="score-badge sb-purple">📘 75.60% — Passed</span>
-    </div>
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-year">Class 10th · High School</div>
-      <div class="tl-title">High School (10th)</div>
-      <div class="tl-board">UP Board · Uttar Pradesh</div>
-      <span class="score-badge sb-orange">⭐ 85.16% — Excellent</span>
-    </div>
-  </div>
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section class="sec">
-  <div class="sec-tag st-orange">Wins</div>
-  <h2>Achievements</h2>
-  <p class="sec-sub">Results that speak for themselves.</p>
-  <div class="ach-grid">
-    <div class="ach-card">
-      <div class="ach-icon">🎯</div>
-      <div class="ach-title">CUET 85% — National Level</div>
-      <div class="ach-desc">Scored 85 percentile in NTA's national level university entrance exam. Competing with lakhs of students.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">⭐</div>
-      <div class="ach-title">Class 10th — 85.16%</div>
-      <div class="ach-desc">Excellent academic performance in UP Board High School examination.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">🏅</div>
-      <div class="ach-title">Sports Participation Certificate</div>
-      <div class="ach-desc">Active participant in sports competitions. Shows discipline, teamwork and physical fitness.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">💡</div>
-      <div class="ach-title">Self-Taught Programmer</div>
-      <div class="ach-desc">Learned C and C++ independently, exploring AI on the side — no college yet, already building.</div>
-    </div>
-  </div>
-</section>
-
-<!-- RESUME -->
-<section class="sec" id="resume">
-  <div class="sec-tag st-blue">Full Details</div>
-  <h2>Resume</h2>
-  <p class="sec-sub">Complete professional summary — everything a recruiter needs.</p>
-  <div class="resume-card">
-    <div class="resume-header">
-      <div>
-        <div class="resume-name">Akash Kumar</div>
-        <div class="resume-loc">📍 Bhadar Khurd, Tarun, Bikapur, Ayodhya, Uttar Pradesh</div>
-      </div>
-      <div class="resume-contact">
-        <div class="rc-item">📞 <a href="tel:8429111532">8429111532</a></div>
-        <div class="rc-item">✉️ <a href="mailto:akash.1532@outlook.in">akash.1532@outlook.in</a></div>
-        <div class="rc-item">🐙 <a href="https://github.com/Akash-kumar" target="_blank" style="color:var(--purple)">github.com/Akash-kumar</a></div>
-      </div>
-    </div>
-    <div class="resume-grid">
-      <div>
-        <div class="res-section">
-          <h4>Technical Skills</h4>
-          <div class="res-skill-list">
-            <div class="rsl-item"><div class="rsl-dot" style="background:var(--blue)"></div>Basic Computer Operations</div>
-            <div class="rsl-item"><div class="rsl-dot" style="background:var(--purple)"></div>MS Word — Document Typing & Formatting</div>
-            <div class="rsl-item"><div class="rsl-dot" style="background:var(--lime)"></div>C Programming Language — Basic Level</div>
-            <div class="rsl-item"><div class="rsl-dot" style="background:var(--orange)"></div>Artificial Intelligence — Basic Knowledge</div>
-            <div class="rsl-item"><div class="rsl-dot" style="background:var(--pink)"></div>Typing — English</div>
-            <div class="rsl-item"><div class="rsl-dot" style="background:var(--green)"></div>Internet Browsing & Email Communication</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="res-section">
-          <h4>Education</h4>
-          <div class="res-edu-list">
-            <div class="rel-item">
-              <div class="rel-title">CUET UG Exam <span style="color:var(--lime)">85%</span></div>
-              <div class="rel-info">NTA (National) · Passed</div>
-            </div>
-            <div class="rel-item">
-              <div class="rel-title">12th (Intermediate) <span style="color:var(--purple)">75.60%</span></div>
-              <div class="rel-info">UP Board · Passed</div>
-            </div>
-            <div class="rel-item">
-              <div class="rel-title">10th (High School) <span style="color:var(--orange)">85.16%</span></div>
-              <div class="rel-info">UP Board · Passed</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="res-obj">
-        <div class="res-section">
-          <h4>Objective</h4>
-          <p style="font-size:0.83rem;color:var(--muted);line-height:1.7">A motivated and hardworking fresher seeking an internship opportunity where I can apply my computer skills and academic knowledge. I have a strong interest in technology and programming, and I am eager to learn and grow in a professional environment.</p>
-        </div>
-      </div>
-    </div>
-    <a class="dl-btn" href="mailto:akash.1532@outlook.in?subject=Resume Request — Akash Kumar">📄 Request Full Resume</a>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="sec" id="contact">
-  <div class="sec-tag st-pink">Get In Touch</div>
-  <h2>Contact</h2>
-  <p class="sec-sub">Reach out — always happy to connect.</p>
-  <div class="contact-grid">
-    <a class="contact-card" href="mailto:akash.1532@outlook.in">
-      <div class="cc-icon ci1">✉️</div>
-      <div><div class="cc-label">Email</div><div class="cc-value">akash.1532@outlook.in</div></div>
-    </a>
-    <a class="contact-card" href="tel:8429111532">
-      <div class="cc-icon ci2">📞</div>
-      <div><div class="cc-label">Phone</div><div class="cc-value">8429111532</div></div>
-    </a>
-    <a class="contact-card" href="https://github.com/Akash-kumar" target="_blank">
-      <div class="cc-icon ci3">🐙</div>
-      <div><div class="cc-label">GitHub</div><div class="cc-value">github.com/Akash-kumar</div></div>
+  <!-- NAVIGATION BAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="logo" aria-label="Akash Kumar Home">
+        <span class="logo-code">&lt;</span>Akash<span class="logo-code">.dev /&gt;</span>
+        <span class="logo-badge">SE</span>
       </a>
-    <a class="contact-card" href="https://Linkedin/Akash-kumar" target="_blank">
-      <div class="cc-icon ci3"><img src='https://img.icons8.com/?size=100&id=13930&format=png&color=000000'/></div>
-      <div><div class="cc-label">Linkedin</div><div class="cc-value">https://www.linkedin.com/in/akash-kumar-019751382/Akash-kumar</div></div>
-    </a>
-    <div class="contact-card" style="cursor:default">
-      <div class="cc-icon ci4">📍</div>
-      <div><div class="cc-label">Location</div><div class="cc-value">Ayodhya, Uttar Pradesh</div></div>
-    </div>
-  </div>
-</section>
 
-<!-- BIG CTA -->
-<div class="big-cta">
-  <div class="big-cta-inner">
-    <h2>Give me a chance.<br>I won't disappoint. 🚀</h2>
-    <p>Fresh, hungry, and ready to learn. Open to internships & entry-level roles.</p>
-    <div class="cta-btns">
-      <a class="btn-primary" href="mailto:akash.1532@outlook.in">Email Me Now</a>
-      <a class="btn-sec" href="tel:8429111532">Call Me</a>
-    </div>
-  </div>
-</div>
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#resume" class="nav-link">Resume</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
 
-<!-- FOOTER -->
-<footer>
-  <div class="ft-logo">ak<em>.</em>dev</div>
-  <p>© 2025 Akash Kumar · Ayodhya, UP</p>
-  <div class="ft-links">
-    <a class="ft-link fl-gh" href="https://github.com/Akash-kumar" target="_blank">GH</a>
-    <a class="ft-link fl-em" href="mailto:akash.1532@outlook.in">✉</a>
-  </div>
-</footer>
+      <!-- Action Items & Mobile Trigger -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm">
+          Get In Touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Text Column -->
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            Open to Software Internships &amp; Roles
+          </div>
+
+          <h1 class="hero-title">
+            Engineering with <br>
+            <span class="gradient-text">Precision &amp; Logic.</span>
+          </h1>
+
+          <div class="hero-subtitle">
+            <span>Akash Kumar</span>
+            <span class="badge-pill">BCA Student @ Chandigarh University</span>
+            <span class="badge-pill">C / C++ &amp; Java</span>
+            <span class="badge-pill">AI Enthusiast</span>
+          </div>
+
+          <p class="hero-description">
+            BCA Student at <strong>Chandigarh University</strong> and Aspiring Software Engineer with a deep passion for
+            low-level systems, algorithmic problem solving, and intelligent software. Backed by solid academic rigor
+            (<strong>85% in CUET UG</strong>, <strong>85.16% in High School</strong>), I build clean, modular solutions
+            with dedication.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              Explore Projects
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#resume" class="btn btn-secondary">
+              View Resume
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </a>
+            <a href="https://github.com/Akash-kumar" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
+              title="GitHub Profile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+
+          <!-- Academic & Skill Metrics Row -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-value accent-indigo">85.0<span style="font-size:1.1rem">%</span></span>
+              <span class="stat-label">CUET UG Percentile</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value accent-cyan">85.2<span style="font-size:1.1rem">%</span></span>
+              <span class="stat-label">High School Distinction</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value accent-emerald">C / C++ / Java</span>
+              <span class="stat-label">Core Tech Focus</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Hero Media Column (Portrait & Code Switcher) -->
+        <div class="hero-media-wrap">
+          <!-- View Switcher Tabs -->
+          <div class="hero-view-switcher" role="tablist">
+            <button class="hero-tab-btn active" data-tab="hero-view-portrait" type="button" role="tab">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Student Profile
+            </button>
+            <button class="hero-tab-btn" data-tab="hero-view-terminal" type="button" role="tab">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              developer.cpp
+            </button>
+          </div>
+
+          <!-- TAB 1: Animated Colorful Portrait with Chandigarh University Badge -->
+          <div id="hero-view-portrait" class="hero-tab-content active" role="tabpanel">
+            <div class="portrait-card-container">
+              <div class="portrait-glow-halo"></div>
+              <div class="portrait-inner">
+                <!-- Floating Badge Top: BCA Student @ Chandigarh University -->
+                <div class="portrait-floating-badge badge-top">
+                  <div class="badge-icon-box">🎓</div>
+                  <div class="badge-info">
+                    <span class="badge-title-highlight">BCA Student</span>
+                    <span class="badge-sub-university">Chandigarh University</span>
+                  </div>
+                </div>
+
+                <!-- Main Portrait Image -->
+                <img src="./akash_profile.jpg?v=4" alt="Akash Kumar - BCA Student at Chandigarh University"
+                  class="portrait-img" loading="eager">
+
+                <div class="portrait-overlay-gradient"></div>
+
+                <!-- Floating Badge Bottom: Open to Internships -->
+                <div class="portrait-floating-badge badge-bottom">
+                  <span class="status-dot-pulse"></span>
+                  <div class="badge-info">
+                    <span class="badge-title-highlight" style="font-size:0.86rem;">Software Engineering Aspirant</span>
+                    <span class="badge-sub-university" style="color:#a78bfa;">C / C++ · Java · AI Systems</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: Interactive Terminal Simulator -->
+          <div id="hero-view-terminal" class="hero-tab-content" role="tabpanel">
+            <div class="terminal-card">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <div class="terminal-title">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                  </svg>
+                  developer.cpp
+                </div>
+                <div style="font-size:0.75rem;color:var(--text-muted);">C++20</div>
+              </div>
+
+              <pre class="terminal-body"><code><span class="code-comment">// Akash Kumar — Profile Specification</span>
+<span class="code-keyword">#include</span> <span class="code-string">&lt;iostream&gt;</span>
+<span class="code-keyword">#include</span> <span class="code-string">&lt;string&gt;</span>
+<span class="code-keyword">#include</span> <span class="code-string">&lt;vector&gt;</span>
+
+<span class="code-keyword">struct</span> <span class="code-type">Engineer</span> {
+    <span class="code-type">std::string</span> <span class="code-var">name</span> = <span class="code-string">"Akash Kumar"</span>;
+    <span class="code-type">std::string</span> <span class="code-var">degree</span> = <span class="code-string">"BCA @ Chandigarh University"</span>;
+    <span class="code-type">std::string</span> <span class="code-var">location</span> = <span class="code-string">"Ayodhya, UP, India"</span>;
+    <span class="code-type">std::vector</span>&lt;<span class="code-type">std::string</span>&gt; <span class="code-var">skills</span> = {
+        <span class="code-string">"C"</span>, <span class="code-string">"C++"</span>, <span class="code-string">"Java"</span>, <span class="code-string">"OOP"</span>, <span class="code-string">"Algorithms"</span>, <span class="code-string">"AI Concepts"</span>
+    };
+    <span class="code-type">double</span> <span class="code-var">cuetPercentile</span> = <span class="code-num">85.00</span>;
+    <span class="code-type">bool</span> <span class="code-var">isOpenForWork</span> = <span class="code-keyword">true</span>;
+};
+
+<span class="code-type">int</span> <span class="code-func">main</span>() {
+    <span class="code-type">Engineer</span> <span class="code-var">akash</span>;
+    <span class="code-type">std::cout</span> &lt;&lt; <span class="code-string">"Ready to build scalable systems.\n"</span>;
+    <span class="code-keyword">return</span> <span class="code-num">0</span>;
+}</code></pre>
+
+              <div class="terminal-actions">
+                <div class="terminal-status">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10"></circle>
+                  </svg>
+                  Compiler: GCC 13.2.0 (Active)
+                </div>
+                <button class="terminal-run-btn" id="run-code-btn" type="button">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  Run Code
+                </button>
+              </div>
+
+              <!-- Dynamic Output Box -->
+              <div id="terminal-output" class="terminal-output"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Background
+          </div>
+          <h2 class="section-title">About My Journey</h2>
+          <p class="section-desc">Disciplined, curious, and dedicated to mastering the art of computing from first
+            principles.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <h3>Bridging Computational Logic with Real-World Execution</h3>
+            <p>
+              Based in Ayodhya, Uttar Pradesh, I am an enthusiastic developer who believes in understanding how software
+              works beneath the surface. Rather than skimming high-level frameworks prematurely, I chose to begin my
+              technical journey with <strong>C and C++</strong>, gaining an appreciation for memory management, data
+              structures, and procedural &amp; object-oriented paradigms.
+            </p>
+            <p>
+              My academic journey reflects consistent focus: securing <strong>85 percentile in CUET UG</strong> at the
+              national level and <strong>85.16% distinction in Class 10th</strong>. In addition, athletic participation
+              has instilled in me a high sense of personal discipline, resilience when debugging complex errors, and a
+              strong collaborative team mindset.
+            </p>
+
+            <div class="about-badges">
+              <span class="badge-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                Structured Thinking
+              </span>
+              <span class="badge-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Fast &amp; Self-Directed Learner
+              </span>
+              <span class="badge-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Team Collaboration &amp; Sportsmanship
+              </span>
+              <span class="badge-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                High Work Ethic
+              </span>
+            </div>
+          </div>
+
+          <!-- Feature Cards Grid -->
+          <div class="about-cards">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h4 class="feature-title">Systems &amp; Logic</h4>
+              <p class="feature-desc">Building rock-solid foundations in C &amp; C++, understanding pointers, memory
+                models, and algorithmic efficiency.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                  </path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <h4 class="feature-title">AI &amp; Emerging Tech</h4>
+              <p class="feature-desc">Actively exploring Machine Learning foundations, neural concept basics, and
+                leveraging modern AI workflows.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <h4 class="feature-title">Academic Excellence</h4>
+              <p class="feature-desc">Demonstrated high aptitude in national competitive exams (CUET UG 85%) and
+                consistent top tier high school honors.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h4 class="feature-title">Clean &amp; Readable Code</h4>
+              <p class="feature-desc">Dedicated to writing well-documented, clean syntax with intuitive naming
+                conventions and modular design.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            Technical Stack
+          </div>
+          <h2 class="section-title">Skills &amp; Competencies</h2>
+          <p class="section-desc">Transparent and verified competencies in programming, core computer science, and
+            modern development tools.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="skills-filter">
+          <button class="filter-btn active" data-filter="all">All Skills</button>
+          <button class="filter-btn" data-filter="languages">Languages</button>
+          <button class="filter-btn" data-filter="concepts">Core CS</button>
+          <button class="filter-btn" data-filter="tools">Tools &amp; AI</button>
+          <button class="filter-btn" data-filter="productivity">Productivity</button>
+        </div>
+
+        <!-- Skill Cards Grid -->
+        <div class="skills-grid">
+          <!-- C Language -->
+          <div class="skill-card" data-category="languages">
+            <div class="skill-header">
+              <div class="skill-icon-wrap" style="color:#38bdf8">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 18a8 8 0 1 1 0-12"></path>
+                </svg>
+              </div>
+              <span class="skill-badge">Core Language</span>
+            </div>
+            <h3 class="skill-title">C Programming</h3>
+            <p class="skill-details">Structured programming, pointers, functions, arrays, memory management concepts,
+              and standard file I/O operations.</p>
+            <div class="skill-level-bar">
+              <div class="skill-progress" style="width: 78%"></div>
+            </div>
+          </div>
+
+          <!-- C++ -->
+          <div class="skill-card" data-category="languages">
+            <div class="skill-header">
+              <div class="skill-icon-wrap" style="color:#818cf8">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 4v16m-8-8h16"></path>
+                </svg>
+              </div>
+              <span class="skill-badge">OOP &amp; Systems</span>
+            </div>
+            <h3 class="skill-title">C++ Language</h3>
+            <p class="skill-details">Object-Oriented Programming (OOP), Classes, Encapsulation, Inheritance,
+              Constructors/Destructors, and basic STL.</p>
+            <div class="skill-level-bar">
+              <div class="skill-progress" style="width: 70%"></div>
+            </div>
+          </div>
+
+          <!-- Data Structures & Algorithms -->
+          <div class="skill-card" data-category="concepts">
+            <div class="skill-header">
+              <div class="skill-icon-wrap" style="color:#34d399">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </div>
+              <span class="skill-badge">Computer Science</span>
+            </div>
+            <h3 class="skill-title">Data Structures &amp; Logic</h3>
+            <p class="skill-details">Arrays, matrices, strings, linear &amp; binary search, bubble/selection sorting,
+              recursion, and time complexity analysis.</p>
+            <div class="skill-level-bar">
+              <div class="skill-progress" style="width: 72%"></div>
+            </div>
+          </div>
+
+          <!-- Artificial Intelligence Basics -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-icon-wrap" style="color:#f59e0b">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                  </path>
+                </svg>
+              </div>
+              <span class="skill-badge">Applied Tech</span>
+            </div>
+            <h3 class="skill-title">Artificial Intelligence</h3>
+            <p class="skill-details">Foundations of machine learning, neural networks intuition, LLM prompt engineering,
+              and modern AI productivity workflows.</p>
+            <div class="skill-level-bar">
+              <div class="skill-progress" style="width: 65%"></div>
+            </div>
+          </div>
+
+          <!-- Git & GitHub -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-icon-wrap" style="color:#f43f5e">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="6" y1="3" x2="6" y2="15"></line>
+                  <circle cx="18" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M18 9a9 9 0 0 1-9 9"></path>
+                </svg>
+              </div>
+              <span class="skill-badge">Version Control</span>
+            </div>
+            <h3 class="skill-title">Git &amp; GitHub</h3>
+            <p class="skill-details">Source code management, git commits, branching, repository management, Markdown
+              documentation, and collaborative workflows.</p>
+            <div class="skill-level-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+
+          <!-- Web Development Fundamentals -->
+          <div class="skill-card" data-category="languages">
+            <div class="skill-header">
+              <div class="skill-icon-wrap" style="color:#06b6d4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+              </div>
+              <span class="skill-badge">Web Basics</span>
+            </div>
+            <h3 class="skill-title">HTML5, CSS3 &amp; JS</h3>
+            <p class="skill-details">Semantic web structures, responsive modern CSS layouts, Flexbox/Grid, and basic
+              vanilla JavaScript DOM scripting.</p>
+            <div class="skill-level-bar">
+              <div class="skill-progress" style="width: 70%"></div>
+            </div>
+          </div>
+
+          <!-- Documentation & Office -->
+          <div class="skill-card" data-category="productivity">
+            <div class="skill-header">
+              <div class="skill-icon-wrap" style="color:#3b82f6">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <span class="skill-badge">Productivity</span>
+            </div>
+            <h3 class="skill-title">Technical Documentation</h3>
+            <p class="skill-details">Microsoft Office (Word, Excel), comprehensive report drafting, typing proficiency
+              in English, and professional email correspondence.</p>
+            <div class="skill-level-bar">
+              <div class="skill-progress" style="width: 88%"></div>
+            </div>
+          </div>
+
+          <!-- Java Programming -->
+          <div class="skill-card" data-category="languages">
+            <div class="skill-header">
+              <div class="skill-icon-wrap" style="color:#f97316">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="1" x2="6" y2="4"></line>
+                  <line x1="10" y1="1" x2="10" y2="4"></line>
+                  <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+              </div>
+              <span class="skill-badge">OOP &amp; JVM</span>
+            </div>
+            <h3 class="skill-title">Java Programming</h3>
+            <p class="skill-details">Core Java, Object-Oriented Principles (OOP), JVM architecture, Exception Handling,
+              Collections Framework, and application development.</p>
+            <div class="skill-level-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            Featured Work
+          </div>
+          <h2 class="section-title">Projects &amp; Implementations</h2>
+          <p class="section-desc">Practical, real-world software applications engineered with clean code architecture
+            and computational rigor.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Student Record Management System -->
+          <article class="project-card">
+            <div class="project-banner">
+              <div class="project-banner-pattern"></div>
+              <div class="project-icon-large">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              </div>
+              <span class="project-type-tag">C++ / File Systems</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Student Record &amp; Performance Manager</h3>
+              <p class="project-desc">
+                A structured C++ application designed for academic record tracking. Implements persistent File I/O
+                storage, record filtering, automated GPA/score calculations, and searchable roll-number queries.
+              </p>
+              <ul class="project-features">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Object-oriented classes with encapsulation
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Persistent file stream read/write (.dat / .txt)
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Input verification and error handling routines
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">C++</span>
+                <span class="project-tag">OOP</span>
+                <span class="project-tag">File Streams</span>
+                <span class="project-tag">Algorithms</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/Akash-kumar" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-secondary btn-sm">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  Repository
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Banking & Transaction System -->
+          <article class="project-card">
+            <div class="project-banner">
+              <div class="project-banner-pattern"></div>
+              <div class="project-icon-large">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <span class="project-type-tag">C / Systems Logic</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Smart Banking &amp; Ledger System</h3>
+              <p class="project-desc">
+                High-integrity console banking simulation featuring customer account creation, deposits, authenticated
+                withdrawals, balance tracking, and transaction history auditing.
+              </p>
+              <ul class="project-features">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Rigorous input sanitization &amp; validation
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Overdraft prevention and balance assertions
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Modular header file architecture
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">C Language</span>
+                <span class="project-tag">Data Integrity</span>
+                <span class="project-tag">Modular Code</span>
+                <span class="project-tag">CLI UI</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/Akash-kumar" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-secondary btn-sm">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  Repository
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Algorithmic Problem Solving & AI Explorations -->
+          <article class="project-card">
+            <div class="project-banner">
+              <div class="project-banner-pattern"></div>
+              <div class="project-icon-large">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <span class="project-type-tag">Algorithms &amp; AI</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">DSA &amp; Computational Logic Suite</h3>
+              <p class="project-desc">
+                Curated solutions to mathematical, algorithmic, and computational problems. Includes sorting benchmarks,
+                array manipulations, search algorithms, and mini AI utility scripts.
+              </p>
+              <ul class="project-features">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Time and space complexity profiling
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Clean, commented clean-code implementations
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Integration of AI tools for optimal test cases
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">C++</span>
+                <span class="project-tag">DSA</span>
+                <span class="project-tag">AI Utilities</span>
+                <span class="project-tag">Problem Solving</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://github.com/Akash-kumar" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-secondary btn-sm">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  Repository
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+            Academic Milestones
+          </div>
+          <h2 class="section-title">Education &amp; Credentials</h2>
+          <p class="section-desc">A proven track record of disciplined study, strong analytical performance, and
+            competitive scores.</p>
+        </div>
+
+        <div class="timeline-wrap">
+          <!-- Item 1: BCA Chandigarh University -->
+          <div class="timeline-card">
+            <div class="timeline-marker"></div>
+            <div class="timeline-inner">
+              <div class="timeline-meta">
+                <span class="timeline-year">2026 – Present · Undergraduate</span>
+                <span class="timeline-grade-badge badge-blue">
+                  🎓 Currently Pursuing
+                </span>
+              </div>
+              <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+              <div class="timeline-institution">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Chandigarh University (CU), Mohali, Punjab, India
+              </div>
+              <p class="timeline-desc">
+                Pursuing undergraduate degree in computer applications with rigorous focus on Object-Oriented
+                Programming (C++, Java), Data Structures &amp; Algorithms, Database Management Systems, and modern
+                Software Engineering practices.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: CUET -->
+          <div class="timeline-card">
+            <div class="timeline-marker"></div>
+            <div class="timeline-inner">
+              <div class="timeline-meta">
+                <span class="timeline-year">2025 · National Level</span>
+                <span class="timeline-grade-badge badge-gold">
+                  🏆 85.00% Percentile
+                </span>
+              </div>
+              <h3 class="timeline-title">CUET UG Examination</h3>
+              <div class="timeline-institution">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                National Testing Agency (NTA), India
+              </div>
+              <p class="timeline-desc">
+                Competed in the prestigious nationwide undergraduate entrance examination covering hundreds of thousands
+                of applicants across India, earning an 85th percentile score demonstrating strong general aptitude,
+                quantitative reasoning, and scientific knowledge.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: Class 12th -->
+          <div class="timeline-card">
+            <div class="timeline-marker"></div>
+            <div class="timeline-inner">
+              <div class="timeline-meta">
+                <span class="timeline-year">Intermediate (12th Grade)</span>
+                <span class="timeline-grade-badge badge-blue">
+                  📘 75.60% Score
+                </span>
+              </div>
+              <h3 class="timeline-title">Senior Secondary / Intermediate</h3>
+              <div class="timeline-institution">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Uttar Pradesh State Board (UP Board)
+              </div>
+              <p class="timeline-desc">
+                Completed secondary education with high marks in core science and mathematics. Developed foundational
+                interest in computer architecture, algorithmic operations, and problem solving.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3: Class 10th -->
+          <div class="timeline-card">
+            <div class="timeline-marker"></div>
+            <div class="timeline-inner">
+              <div class="timeline-meta">
+                <span class="timeline-year">High School (10th Grade)</span>
+                <span class="timeline-grade-badge badge-green">
+                  ⭐ 85.16% Distinction
+                </span>
+              </div>
+              <h3 class="timeline-title">High School Matriculation</h3>
+              <div class="timeline-institution">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Uttar Pradesh State Board (UP Board)
+              </div>
+              <p class="timeline-desc">
+                Achieved First Division Honors with Distinction (85.16%), standing in the top tier of school graduates
+                through consistent academic discipline and dedication.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="section achievements-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+            Key Highlights
+          </div>
+          <h2 class="section-title">Honors &amp; Extracurriculars</h2>
+          <p class="section-desc">Tangible recognitions of merit, discipline, and technical perseverance.</p>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achieve-card">
+            <div class="achieve-icon-badge gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+            </div>
+            <h3 class="achieve-title">CUET 85% Percentile</h3>
+            <p class="achieve-desc">Secured a top 85 percentile in NTA's nationwide examination, reflecting strong
+              aptitude and critical reasoning skills under competitive conditions.</p>
+          </div>
+
+          <div class="achieve-card">
+            <div class="achieve-icon-badge emerald">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <h3 class="achieve-title">High School Distinction (85.16%)</h3>
+            <p class="achieve-desc">Earned high honors in Matriculation examinations, establishing foundational
+              analytical capabilities and quantitative strengths.</p>
+          </div>
+
+          <div class="achieve-card">
+            <div class="achieve-icon-badge indigo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="achieve-title">Athletic Certificate of Participation</h3>
+            <p class="achieve-desc">Certified participant in competitive sports, reinforcing dedication to physical
+              fitness, teamwork, self-discipline, and grace under pressure.</p>
+          </div>
+
+          <div class="achieve-card">
+            <div class="achieve-icon-badge purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h3 class="achieve-title">Self-Taught Systems Builder</h3>
+            <p class="achieve-desc">Independently mastered fundamental programming in C and C++, creating console
+              applications and integrating AI tools with no external spoon-feeding.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME SECTION -->
+    <section class="section resume-section" id="resume">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            Curriculum Vitae
+          </div>
+          <h2 class="section-title">Professional Resume</h2>
+          <p class="section-desc">Comprehensive summary of technical competencies, academic qualifications, and profile
+            credentials.</p>
+        </div>
+
+        <div class="resume-section-wrapper">
+          <!-- Top Header -->
+          <div class="resume-top-bar">
+            <div>
+              <h3 class="resume-candidate-name">Akash Kumar</h3>
+              <div class="resume-candidate-title">BCA Student @ Chandigarh University | Aspiring Software Engineer</div>
+              <div class="resume-candidate-loc">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Bhadar Khurd, Tarun, Bikapur, Ayodhya, Uttar Pradesh, 224203
+              </div>
+            </div>
+
+            <div class="resume-action-buttons">
+              <button class="btn btn-secondary btn-sm" onclick="triggerPrintResume()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                  <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Print / Save PDF
+              </button>
+              <a href="mailto:akash.1532@outlook.in?subject=Official%20Resume%20Request%20-%20Akash%20Kumar"
+                class="btn btn-primary btn-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Request Full PDF
+              </a>
+            </div>
+          </div>
+
+          <!-- Two Column Content -->
+          <div class="resume-columns">
+            <!-- Left Column: Objective, Projects, Education -->
+            <div>
+              <div class="resume-block">
+                <h4 class="resume-heading">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                  </svg>
+                  Professional Objective
+                </h4>
+                <p class="resume-summary-text">
+                  A motivated and analytical fresher seeking an internship or junior developer role where I can apply my
+                  programming skills in C, C++, and Java, algorithmic thinking, and academic foundation. Eager to
+                  contribute to production codebases, write clean modular software, and rapidly grow within a
+                  collaborative technical team.
+                </p>
+              </div>
+
+              <div class="resume-block">
+                <h4 class="resume-heading">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  Key Technical Projects
+                </h4>
+
+                <div class="resume-item">
+                  <div class="resume-item-header">
+                    <span class="resume-item-title">Student Record &amp; Grade Management System</span>
+                    <span class="resume-item-date">C++ · OOP</span>
+                  </div>
+                  <div class="resume-item-sub">Console Software Application</div>
+                  <p class="resume-item-desc">
+                    Engineered an object-oriented C++ system for persistent student record management, file stream
+                    serialization, automatic score calculation, and formatted reporting.
+                  </p>
+                </div>
+
+                <div class="resume-item">
+                  <div class="resume-item-header">
+                    <span class="resume-item-title">Banking &amp; Ledger Simulation</span>
+                    <span class="resume-item-date">C · Modular</span>
+                  </div>
+                  <div class="resume-item-sub">Financial CLI Application</div>
+                  <p class="resume-item-desc">
+                    Developed a robust procedural banking program managing account initialization, deposit/withdrawal
+                    calculations, overdraft checks, and secure ledger records.
+                  </p>
+                </div>
+              </div>
+
+              <div class="resume-block">
+                <h4 class="resume-heading">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  </svg>
+                  Education History
+                </h4>
+
+                <div class="resume-item">
+                  <div class="resume-item-header">
+                    <span class="resume-item-title">Bachelor of Computer Applications (BCA)</span>
+                    <span class="resume-item-date">2024 – Present</span>
+                  </div>
+                  <div class="resume-item-sub">Chandigarh University (CU), Punjab — Currently Pursuing</div>
+                </div>
+
+                <div class="resume-item">
+                  <div class="resume-item-header">
+                    <span class="resume-item-title">CUET UG Entrance Examination</span>
+                    <span class="resume-item-date">2024</span>
+                  </div>
+                  <div class="resume-item-sub">National Testing Agency (NTA) — 85.00 Percentile</div>
+                </div>
+
+                <div class="resume-item">
+                  <div class="resume-item-header">
+                    <span class="resume-item-title">Intermediate (Class 12th)</span>
+                    <span class="resume-item-date">Passed</span>
+                  </div>
+                  <div class="resume-item-sub">UP Board, Uttar Pradesh — 75.60%</div>
+                </div>
+
+                <div class="resume-item">
+                  <div class="resume-item-header">
+                    <span class="resume-item-title">High School (Class 10th)</span>
+                    <span class="resume-item-date">Distinction</span>
+                  </div>
+                  <div class="resume-item-sub">UP Board, Uttar Pradesh — 85.16%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Skills & Credentials -->
+            <div>
+              <div class="resume-block">
+                <h4 class="resume-heading">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                  Technical Competencies
+                </h4>
+
+                <div class="resume-skill-group">
+                  <div class="resume-skill-group-title">Programming Languages</div>
+                  <div class="resume-pills">
+                    <span class="resume-pill">C</span>
+                    <span class="resume-pill">C++</span>
+                    <span class="resume-pill">Java</span>
+                  </div>
+                </div>
+
+                <div class="resume-skill-group">
+                  <div class="resume-skill-group-title">Concepts &amp; Paradigms</div>
+                  <div class="resume-pills">
+                    <span class="resume-pill">OOP</span>
+                    <span class="resume-pill">Data Structures</span>
+                    <span class="resume-pill">Pointers &amp; Memory</span>
+                    <span class="resume-pill">File Handling</span>
+                    <span class="resume-pill">Algorithmic Logic</span>
+                  </div>
+                </div>
+
+                <div class="resume-skill-group">
+                  <div class="resume-skill-group-title">Tools &amp; Environments</div>
+                  <div class="resume-pills">
+                    <span class="resume-pill">Git</span>
+                    <span class="resume-pill">GitHub</span>
+                    <span class="resume-pill">VS Code</span>
+                    <span class="resume-pill">GCC / G++</span>
+                    <span class="resume-pill">Command Line</span>
+                  </div>
+                </div>
+
+                <div class="resume-skill-group">
+                  <div class="resume-skill-group-title">Artificial Intelligence</div>
+                  <div class="resume-pills">
+                    <span class="resume-pill">AI Principles</span>
+                    <span class="resume-pill">LLM Prompting</span>
+                    <span class="resume-pill">Modern AI Dev Tools</span>
+                  </div>
+                </div>
+
+                <div class="resume-skill-group">
+                  <div class="resume-skill-group-title">Office &amp; Professional</div>
+                  <div class="resume-pills">
+                    <span class="resume-pill">MS Word</span>
+                    <span class="resume-pill">MS Excel</span>
+                    <span class="resume-pill">Typing (English)</span>
+                    <span class="resume-pill">Documentation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resume-block">
+                <h4 class="resume-heading">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                  </svg>
+                  Languages
+                </h4>
+                <div class="resume-pills">
+                  <span class="resume-pill">Hindi (Native / Fluent)</span>
+                  <span class="resume-pill">English (Professional Working)</span>
+                </div>
+              </div>
+
+              <div class="resume-block">
+                <h4 class="resume-heading">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                  Honors &amp; Sports
+                </h4>
+                <p class="resume-item-desc" style="margin-bottom:0.4rem;">• National Entrance CUET UG 85 Percentile</p>
+                <p class="resume-item-desc" style="margin-bottom:0.4rem;">• High School Academic Distinction (85.16%)
+                </p>
+                <p class="resume-item-desc">• Sports Competition Participation Certificate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Communication
+          </div>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-desc">Have an internship opening, software project, or want to discuss technology? Let's
+            connect.</p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Left: Direct Contact Cards -->
+          <div class="contact-info-col">
+            <!-- Email -->
+            <a href="mailto:akash.1532@outlook.in" class="contact-card">
+              <div class="contact-card-left">
+                <div class="contact-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-meta">
+                  <div class="contact-type">Email Address</div>
+                  <div class="contact-val">akash.1532@outlook.in</div>
+                </div>
+              </div>
+              <button class="contact-copy-btn" data-copy="akash.1532@outlook.in" title="Copy Email" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+918429111532" class="contact-card">
+              <div class="contact-card-left">
+                <div class="contact-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="contact-meta">
+                  <div class="contact-type">Phone &amp; WhatsApp</div>
+                  <div class="contact-val">+91 8429111532</div>
+                </div>
+              </div>
+              <button class="contact-copy-btn" data-copy="+918429111532" title="Copy Phone Number" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/akash-kumar-019751382/" target="_blank" rel="noopener noreferrer"
+              class="contact-card">
+              <div class="contact-card-left">
+                <div class="contact-icon-box" style="color:#0a66c2;">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </div>
+                <div class="contact-meta">
+                  <div class="contact-type">Professional Network</div>
+                  <div class="contact-val">linkedin.com/in/akash-kumar-019751382</div>
+                </div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="color:var(--text-muted)">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Akash-kumar" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-card-left">
+                <div class="contact-icon-box">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </div>
+                <div class="contact-meta">
+                  <div class="contact-type">Code Repositories</div>
+                  <div class="contact-val">github.com/Akash-kumar</div>
+                </div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="color:var(--text-muted)">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+
+            <!-- Location -->
+            <div class="contact-card" style="cursor:default">
+              <div class="contact-card-left">
+                <div class="contact-icon-box" style="color:#10b981;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-meta">
+                  <div class="contact-type">Current Location</div>
+                  <div class="contact-val">Ayodhya, Uttar Pradesh, India</div>
+                </div>
+              </div>
+              <span class="badge-pill" style="font-size:0.75rem;">Relocation Open</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="contact-form-box">
+            <h3>Send a Message</h3>
+            <p>Direct communication via email. Leave a message and I will reply promptly within 24 hours.</p>
+
+            <form id="portfolio-contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Full Name *</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Rahul Sharma / Recruiter Name"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Your Email *</label>
+                <input type="email" id="form-email" class="form-input" placeholder="e.g. recruiter@company.com"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Subject</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="Internship Opportunity / Inquiry">
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message *</label>
+                <textarea id="form-message" class="form-textarea"
+                  placeholder="Hello Akash, we have an opening for a software intern..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;">
+                Send Message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Big CTA Banner -->
+        <div class="cta-banner">
+          <h2>Ready to Add Value to Your Engineering Team.</h2>
+          <p>
+            Disciplined problem solver, strong fundamentals in C &amp; C++, and actively expanding skills into modern
+            AI. Open for internships, junior developer roles, and freelance projects.
+          </p>
+          <div class="cta-btns">
+            <a href="mailto:akash.1532@outlook.in" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Email Akash Directly
+            </a>
+            <a href="tel:+918429111532" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              Call +91 8429111532
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <span class="logo-code">&lt;</span>Akash<span class="logo-code">.dev /&gt;</span>
+          </a>
+          <p class="footer-desc">
+            Aspiring Software Engineer focused on C/C++, algorithms, and artificial intelligence. Built with modern web
+            standards and responsive design.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; <span id="current-year">2025</span> Akash Kumar · Ayodhya, Uttar Pradesh, India · All rights reserved.
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://github.com/Akash-kumar" target="_blank" rel="noopener noreferrer" class="social-icon-link"
+            title="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/akash-kumar-019751382/" target="_blank" rel="noopener noreferrer"
+            class="social-icon-link" title="LinkedIn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="mailto:akash.1532@outlook.in" class="social-icon-link" title="Email" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to Top" title="Back to Top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- SCRIPTS -->
+  <script src="./script.js"></script>
 </body>
+
 </html>
